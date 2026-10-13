@@ -87,9 +87,11 @@ The annual sample workbook was reopened with openpyxl and checked against indepe
 
 ## Quick start
 
-Install Docker Engine and the Compose plugin, then run these commands from the repository root:
+Install Git, Docker Engine, and the Compose plugin. Clone the repository, then start the local services:
 
 ```bash
+git clone https://github.com/MojoisDev/nivara-pharma-data-suite.git
+cd nivara-pharma-data-suite
 # Preserve an existing local configuration.
 test -f .env || cp .env.example .env
 # Set AUTOMATION_API_TOKEN locally if you want authenticated API access.

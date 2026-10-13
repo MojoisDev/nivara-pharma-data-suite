@@ -1,6 +1,6 @@
 # Recruiter sharing notes
 
-Repository publication is being prepared for `MojoisDev/nivara-pharma-data-suite`, with public visibility requested by the owner. The local presentation assets include the README, screenshots, source review, resume bullets, and captioned demonstration. The source-review evidence preserves its earlier pre-publication state.
+Published on 14 October 2026: [MojoisDev/nivara-pharma-data-suite](https://github.com/MojoisDev/nivara-pharma-data-suite), with public visibility requested by the owner. The local presentation assets include the README, screenshots, source review, resume bullets, and captioned demonstration. The source-review evidence preserves its earlier pre-publication state.
 
 ## Suggested GitHub description
 
@@ -8,7 +8,7 @@ Python + PostgreSQL portfolio: synthetic pharma sales and inventory analytics, a
 
 Suggested topics: `python`, `postgresql`, `sqlalchemy`, `pandas`, `streamlit`, `plotly`, `data-engineering`, `data-quality`, `automation`, `apscheduler`, `openpyxl`, `portfolio`.
 
-## Before publishing
+## Sharing and maintenance
 
 - Address the two source-review findings or keep them explicitly documented. Preview mode protects the current demo from the SMTP defect.
 - Choose your repository name, owner, visibility, and license. No license was invented for you.
