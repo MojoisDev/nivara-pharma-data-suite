@@ -159,4 +159,3 @@ docs/               Architecture, setup, KPI contracts, evidence, and screenshot
 docs/recruiter/     Source review, demo, verified resume bullets, and interview notes
 ```
 
-[Resume bullets](docs/recruiter/RESUME_BULLETS.md) · [Architecture interview practice](docs/recruiter/INTERVIEW_PREP.md) · [Complete project summary](FINAL_SUMMARY.md)
