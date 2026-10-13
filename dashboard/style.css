@@ -1,0 +1,17 @@
+.stApp {background:#f5f4ee;color:#193a37}
+.block-container {padding-top:2.2rem;max-width:1480px}
+h1,h2,h3 {font-family:Georgia,serif!important;font-weight:500!important;letter-spacing:-.035em}
+h1 {font-size:3.6rem!important;line-height:1.05!important}
+[data-testid="stSidebar"] {background:#e9ece3;border-right:1px solid #cdd4c6}
+[data-testid="stMetric"] {border-top:2px solid #27564b;padding:1rem 0 .8rem}
+[data-testid="stMetricValue"] {font-family:Georgia,serif;font-size:2.45rem}
+[data-testid="stMetricLabel"] {text-transform:uppercase;font-size:.72rem;letter-spacing:.1em}
+[data-testid="stTabs"] button {font-size:.95rem}
+.eyebrow {font:600 .73rem monospace;letter-spacing:.18em;text-transform:uppercase;color:#597168}
+.brand {font-family:Georgia,serif;font-size:2.1rem;color:#194b3f;margin-bottom:.1rem}
+.brand-sub {font:.68rem monospace;letter-spacing:.12em;margin-bottom:2rem;color:#50665b}
+.masthead {display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #bdc8bb;padding-bottom:1rem;margin-bottom:1.6rem}
+.synthetic-tag {padding:.45rem .7rem;border:1px solid #a9b6a3;color:#3b6154;font:.7rem monospace;letter-spacing:.1em}
+.risk-note {background:#ece3cf;border-left:3px solid #b27b28;padding:1rem 1.3rem;margin:.6rem 0 1rem;color:#684717}
+.footer {border-top:1px solid #ccd3c7;margin-top:2rem;padding-top:1rem;color:#607269;font:.72rem monospace}
+@media(max-width:700px){h1{font-size:2.5rem!important}.masthead{gap:1rem;flex-wrap:wrap}}

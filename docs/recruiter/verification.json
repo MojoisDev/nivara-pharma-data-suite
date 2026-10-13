@@ -1,0 +1,53 @@
+{
+  "review_date_local": "2026-10-13",
+  "timezone": "Asia/Kolkata",
+  "scope": "Recruiter-readiness pass; application code unchanged",
+  "tests": {
+    "passed": 92,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 14.92,
+    "postgresql_integration": true,
+    "command": "TEST_DATABASE_URL=postgresql+psycopg://pharma:synthetic_local_only@localhost:55432/pharma_test .venv/bin/pytest -q --tb=short",
+    "initial_environment_errors": 10,
+    "recovery": "Restarted existing dedicated pharma-phase1-db container; reran full suite"
+  },
+  "ruff_check": "passed",
+  "ruff_format_check": "passed",
+  "audit_findings": [
+    "SMTP QUIT 421 after accepted DATA can resend the message; isolated mocked reproduction confirmed",
+    "Foundation PostgreSQL fixture does not isolate its writes from the database named by TEST_DATABASE_URL"
+  ],
+  "application_changes": false,
+  "publication": {
+    "github_published": false,
+    "repository_initialized": false
+  },
+  "demo": {
+    "duration_seconds": 150.0,
+    "codec": "h264",
+    "resolution": "1920x1080",
+    "audio": false,
+    "source": "Nine actual local dashboard captures, captioned and held for walkthrough pacing; not continuous screen recording",
+    "bytes": 1867695,
+    "full_video_decode": "passed",
+    "visual_checks": [
+      "Intro caption readability",
+      "Annual report caption and SQL-backed totals"
+    ]
+  },
+  "not_checked": [
+    "Live SMTP",
+    "Microsoft Excel GUI",
+    "Production load",
+    "Personal voice recording",
+    "Interactive interview performance",
+    "GitHub CI"
+  ],
+  "document_checks": {
+    "markdown_files": 8,
+    "existing_relative_targets": 60,
+    "fences_balanced": true
+  },
+  "package_completed_local_date": "2026-10-14"
+}

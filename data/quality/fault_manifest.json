@@ -1,0 +1,157 @@
+{
+  "synthetic": true,
+  "seed": 20251011,
+  "reference_at": "2026-01-01T12:00:00+00:00",
+  "scenarios": [
+    "Duplicate medicine: both original and appended copy are flagged",
+    "Missing manufacturer",
+    "Missing medicine name",
+    "Orphan category FK",
+    "Impossible list price",
+    "Negative stock also contradicts closing reconciliation",
+    "Unused batch expires on manufacture date; correct unavailable flag avoids an extra availability fault",
+    "Malformed receipt date",
+    "Incorrect declared line amount; invoice checks use calculated amounts, not this faulty declaration",
+    "Incorrect declared invoice total",
+    "Legitimate expired held stock incorrectly marked sellable",
+    "Invalid synthetic contact email",
+    "Stale import",
+    "Delayed reporting feed"
+  ],
+  "expected_count": 19,
+  "findings": [
+    {
+      "rule_id": "UNI001",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:1",
+      "field": "id"
+    },
+    {
+      "rule_id": "UNI002",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:1",
+      "field": "sku"
+    },
+    {
+      "rule_id": "UNI001",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:121",
+      "field": "id"
+    },
+    {
+      "rule_id": "UNI002",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:121",
+      "field": "sku"
+    },
+    {
+      "rule_id": "CMP001",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:2",
+      "field": "manufacturer"
+    },
+    {
+      "rule_id": "CMP001",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:3",
+      "field": "name"
+    },
+    {
+      "rule_id": "REF001",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:4",
+      "field": "category_id"
+    },
+    {
+      "rule_id": "VAL003",
+      "rule_version": "1.0",
+      "entity": "medicines",
+      "record_ref": "medicines:5",
+      "field": "list_price"
+    },
+    {
+      "rule_id": "VAL002",
+      "rule_version": "1.0",
+      "entity": "inventory",
+      "record_ref": "inventory:1",
+      "field": "quantity"
+    },
+    {
+      "rule_id": "CON011",
+      "rule_version": "1.0",
+      "entity": "inventory",
+      "record_ref": "inventory:1",
+      "field": "quantity"
+    },
+    {
+      "rule_id": "CON001",
+      "rule_version": "1.0",
+      "entity": "batches",
+      "record_ref": "batches:3",
+      "field": "expiry_date"
+    },
+    {
+      "rule_id": "CON002",
+      "rule_version": "1.0",
+      "entity": "batches",
+      "record_ref": "batches:3",
+      "field": "received_date"
+    },
+    {
+      "rule_id": "VAL001",
+      "rule_version": "1.0",
+      "entity": "batches",
+      "record_ref": "batches:4",
+      "field": "received_date"
+    },
+    {
+      "rule_id": "CON008",
+      "rule_version": "1.0",
+      "entity": "sales_items",
+      "record_ref": "sales_items:1",
+      "field": "line_total"
+    },
+    {
+      "rule_id": "CON009",
+      "rule_version": "1.0",
+      "entity": "sales",
+      "record_ref": "sales:2",
+      "field": "invoice_total"
+    },
+    {
+      "rule_id": "CON010",
+      "rule_version": "1.0",
+      "entity": "inventory",
+      "record_ref": "inventory:153",
+      "field": "is_sellable"
+    },
+    {
+      "rule_id": "VAL005",
+      "rule_version": "1.0",
+      "entity": "distributors",
+      "record_ref": "distributors:1",
+      "field": "contact_email"
+    },
+    {
+      "rule_id": "TIM001",
+      "rule_version": "1.0",
+      "entity": "__metadata__",
+      "record_ref": "metadata",
+      "field": "source_received_at"
+    },
+    {
+      "rule_id": "TIM002",
+      "rule_version": "1.0",
+      "entity": "__metadata__",
+      "record_ref": "metadata",
+      "field": "feed_date"
+    }
+  ]
+}

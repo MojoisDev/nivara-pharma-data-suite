@@ -1,0 +1,14 @@
+{
+  "timezone": "Asia/Kolkata",
+  "daily_cron": "0 8 * * *",
+  "weekly_cron": "0 9 * * mon",
+  "report_dir": "data/reports",
+  "low_stock_units": 100,
+  "near_expiry_days": 90,
+  "max_attempts": 3,
+  "timeout_seconds": 120.0,
+  "retry_delay_seconds": 2.0,
+  "stop_on_critical": true,
+  "assessment_at": null,
+  "attach_report": true
+}

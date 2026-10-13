@@ -1,0 +1,213 @@
+{
+  "synthetic": true,
+  "verified_at": "2026-10-11T17:52:15.621351+00:00",
+  "database": "PostgreSQL 16 local Compose at localhost:55433",
+  "business_counts": {
+    "categories": 8,
+    "distributors": 24,
+    "warehouses": 4,
+    "medicines": 120,
+    "sales": 8820,
+    "batches": 1920,
+    "inventory": 1920,
+    "sales_items": 31549
+  },
+  "quality_counts": {
+    "dq_datasets": 2,
+    "dq_validation_runs": 3,
+    "dq_issues": 19,
+    "dq_staging_records": 88731,
+    "dq_run_findings": 38,
+    "dq_audit_events": 25,
+    "dq_schema_migrations": 1
+  },
+  "quarantined_source_records": 13,
+  "datasets": [
+    {
+      "name": "demo-corrupted",
+      "version": 1,
+      "status": "quarantined"
+    },
+    {
+      "name": "demo-clean",
+      "version": 1,
+      "status": "approved"
+    }
+  ],
+  "reviewed_nullable_fields_populated": {
+    "manufacturer": 120,
+    "contact_email": 24,
+    "is_sellable": 1920
+  },
+  "clean_and_corrupted_reports": {
+    "demo-clean": {
+      "dataset": "demo-clean",
+      "reference_at": "2026-01-01T12:00:00Z",
+      "dimensions": {
+        "completeness": {
+          "eligible": 331251,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        },
+        "uniqueness": {
+          "eligible": 88730,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        },
+        "validity": {
+          "eligible": 313081,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        },
+        "consistency": {
+          "eligible": 269563,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        },
+        "referential_integrity": {
+          "eligible": 149716,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        },
+        "timeliness": {
+          "eligible": 2,
+          "failed": 0,
+          "not_applicable": 0,
+          "score": 100.0
+        }
+      },
+      "overall_score": 100.0,
+      "total_records": 44365,
+      "passed_records": 44365,
+      "failed_records": 0,
+      "severity_counts": {},
+      "run_id": 1,
+      "dataset_version": 1,
+      "transitions": {
+        "new": 0,
+        "persistent": 0,
+        "reopened": 0,
+        "resolved": 0
+      }
+    },
+    "demo-corrupted": {
+      "dataset": "demo-corrupted",
+      "reference_at": "2026-01-01T12:00:00Z",
+      "dimensions": {
+        "completeness": {
+          "eligible": 331258,
+          "failed": 2,
+          "not_applicable": 0,
+          "score": 99.99939624099645
+        },
+        "uniqueness": {
+          "eligible": 88732,
+          "failed": 4,
+          "not_applicable": 0,
+          "score": 99.99549204345671
+        },
+        "validity": {
+          "eligible": 312572,
+          "failed": 4,
+          "not_applicable": 512,
+          "score": 99.99872029484406
+        },
+        "consistency": {
+          "eligible": 269560,
+          "failed": 6,
+          "not_applicable": 3,
+          "score": 99.99777415046742
+        },
+        "referential_integrity": {
+          "eligible": 149717,
+          "failed": 1,
+          "not_applicable": 0,
+          "score": 99.99933207317807
+        },
+        "timeliness": {
+          "eligible": 2,
+          "failed": 2,
+          "not_applicable": 0,
+          "score": 0.0
+        }
+      },
+      "overall_score": 83.33178580049045,
+      "total_records": 44366,
+      "passed_records": 44353,
+      "failed_records": 13,
+      "severity_counts": {
+        "error": 9,
+        "critical": 7,
+        "warning": 3
+      },
+      "run_id": 3,
+      "dataset_version": 1,
+      "transitions": {
+        "new": 0,
+        "persistent": 19,
+        "reopened": 0,
+        "resolved": 0
+      }
+    }
+  },
+  "manifest_comparison": {
+    "expected": 19,
+    "detected": 19,
+    "missing": [],
+    "unexpected": []
+  },
+  "phase1_2025_kpis": {
+    "revenue": "54539450.97",
+    "units": "224106",
+    "invoices": "4590",
+    "stock_units": "482753",
+    "stock_value": "70823412.56",
+    "risk_value": "2396804.18",
+    "turnover": "0.4624081074182456"
+  },
+  "tests": {
+    "command": "TEST_DATABASE_URL=<local PostgreSQL disposable pharma_test> .venv/bin/pytest -q",
+    "passed": 57,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 10.37
+  },
+  "lint": "ruff check . passed",
+  "format": "ruff format --check . passed (30 files)",
+  "migration": "sql/002_data_quality.sql executed twice successfully against existing Phase 1 PostgreSQL",
+  "dashboard_url": "http://127.0.0.1:8502/Data_Quality",
+  "limitations": [
+    "Historical synthetic assessment clock, not current freshness",
+    "No authenticated electronic signatures or GxP claim",
+    "FastAPI absent; optional API not added",
+    "No Phase 3 scheduling/email"
+  ],
+  "browser_checks": {
+    "phase1_sales_dashboard": "Verified original 2025 revenue/units/stock after upgrade",
+    "quality_page": "Verified clean and corrupted stored scores at mobile and desktop viewports",
+    "csv_export": {
+      "downloaded_file": "synthetic_demo-corrupted_run_3_quality.csv",
+      "rows": 19,
+      "unique_issue_ids": true,
+      "severity_counts": {
+        "error": 9,
+        "critical": 7,
+        "warning": 3
+      }
+    },
+    "screenshot": "docs/screenshots/quality-desk.jpg",
+    "rule_filter": "REF001 isolated one orphan-category finding; full ledger restored",
+    "ledger_screenshot": "docs/screenshots/quality-ledger.jpg"
+  },
+  "container_health": {
+    "app": "healthy",
+    "postgres": "healthy",
+    "bundled_config": "1.0 parsed successfully",
+    "container_manifest_check": "19 expected,19 detected,0 missing,0 unexpected"
+  }
+}

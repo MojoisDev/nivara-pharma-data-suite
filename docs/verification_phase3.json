@@ -1,0 +1,309 @@
+{
+  "synthetic": true,
+  "api_unauthenticated_request": 401,
+  "annual_execution": {
+    "id": "33f01443-bcb3-4c0a-88e2-0ba494c69c1a",
+    "idempotency_key": "phase3-full-data-2025",
+    "request_hash": "f55ab9e0f61423d0206563615e2468964e029e5688f394bc0c3ddb643eee7a63",
+    "kind": "weekly",
+    "actor": "synthetic-verifier",
+    "notes": "Phase 3 local verification using synthetic data only",
+    "config_json": {
+      "timezone": "Asia/Kolkata",
+      "daily_cron": "0 8 * * *",
+      "weekly_cron": "0 9 * * mon",
+      "report_dir": "/app/data/reports",
+      "low_stock_units": 100,
+      "near_expiry_days": 90,
+      "max_attempts": 3,
+      "timeout_seconds": 120.0,
+      "retry_delay_seconds": 2.0,
+      "stop_on_critical": true,
+      "assessment_at": null,
+      "attach_report": true
+    },
+    "params_json": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "status": "succeeded",
+    "created_at": "2026-10-11 18:45:55.186555+00:00",
+    "started_at": "2026-10-11 18:45:55.354869+00:00",
+    "completed_at": "2026-10-11 18:45:58.681907+00:00",
+    "duration_seconds": 3.325909541003057,
+    "attempts": 1,
+    "error_type": null,
+    "result_json": {
+      "ok": true,
+      "report_id": "4ed6cd17-8034-5ecd-81b5-72746623b701",
+      "email_id": "f2dcf4b8-0072-57e3-b14e-7b68f4c2ca31",
+      "email_status": "preview",
+      "quality_run_id": 4,
+      "snapshot_hash": "a8cb51ac1813604cf1f7a04f2cdfb5237929cf20aa2b8397eb2ab6ad514e510e"
+    }
+  },
+  "failure_execution": {
+    "id": "e02a70a7-44cb-4edc-9ac8-d7252f52c9de",
+    "idempotency_key": "phase3-out-of-range-window",
+    "request_hash": "c47a8e33ff4ac84fdf2b5c16c4f90279aa2f07c0f7c17d2a76fd8beb01e67934",
+    "kind": "daily",
+    "actor": "synthetic-verifier",
+    "notes": "Phase 3 local verification using synthetic data only",
+    "config_json": {
+      "timezone": "Asia/Kolkata",
+      "daily_cron": "0 8 * * *",
+      "weekly_cron": "0 9 * * mon",
+      "report_dir": "/app/data/reports",
+      "low_stock_units": 100,
+      "near_expiry_days": 90,
+      "max_attempts": 3,
+      "timeout_seconds": 120.0,
+      "retry_delay_seconds": 2.0,
+      "stop_on_critical": true,
+      "assessment_at": null,
+      "attach_report": true
+    },
+    "params_json": {
+      "start": "2027-01-01",
+      "end": "2027-01-31"
+    },
+    "status": "failed",
+    "created_at": "2026-10-11 18:45:58.708540+00:00",
+    "started_at": "2026-10-11 18:45:59.701932+00:00",
+    "completed_at": "2026-10-11 18:46:01.923329+00:00",
+    "duration_seconds": 2.2206266289977066,
+    "attempts": 1,
+    "error_type": "ValueError",
+    "result_json": {
+      "ok": false,
+      "error_type": "ValueError",
+      "retryable": false
+    }
+  },
+  "recovery_execution": {
+    "id": "8a978339-5992-4833-abcf-fa0ae701003e",
+    "idempotency_key": "phase3-daily-recovery",
+    "request_hash": "6ac71fbbbc72efabc21bbf6266e01aa6be0e4c5a9d86f872651b3fa2bf081478",
+    "kind": "daily",
+    "actor": "synthetic-verifier",
+    "notes": "Phase 3 local verification using synthetic data only",
+    "config_json": {
+      "timezone": "Asia/Kolkata",
+      "daily_cron": "0 8 * * *",
+      "weekly_cron": "0 9 * * mon",
+      "report_dir": "/app/data/reports",
+      "low_stock_units": 100,
+      "near_expiry_days": 90,
+      "max_attempts": 3,
+      "timeout_seconds": 120.0,
+      "retry_delay_seconds": 2.0,
+      "stop_on_critical": true,
+      "assessment_at": null,
+      "attach_report": true
+    },
+    "params_json": {
+      "start": "2025-12-31",
+      "end": "2025-12-31"
+    },
+    "status": "succeeded",
+    "created_at": "2026-10-11 18:46:02.226441+00:00",
+    "started_at": "2026-10-11 18:46:02.950360+00:00",
+    "completed_at": "2026-10-11 18:46:05.573315+00:00",
+    "duration_seconds": 2.622181268001441,
+    "attempts": 1,
+    "error_type": null,
+    "result_json": {
+      "ok": true,
+      "report_id": "142a581c-02ce-5b6e-99e2-fa64075ad85d",
+      "email_id": "35d11567-3f6a-5dd1-8959-a03d61acc6c1",
+      "email_status": "preview",
+      "quality_run_id": 6,
+      "snapshot_hash": "a8cb51ac1813604cf1f7a04f2cdfb5237929cf20aa2b8397eb2ab6ad514e510e"
+    }
+  },
+  "repeated_request_returned_same_id": true,
+  "api_download_matches_host_artifact": true,
+  "sample_workbook": "/home/mujeeb_25/pharma-data-suite/data/reports/synthetic_4ed6cd17-8034-5ecd-81b5-72746623b701.xlsx",
+  "scheduler": {
+    "id": "main",
+    "owner": "1b303369-67ec-4b57-a669-94f99ff610b0",
+    "status": "running",
+    "heartbeat_at": "2026-10-11 18:46:04.286095+00:00",
+    "config_json": {
+      "timezone": "Asia/Kolkata",
+      "daily_cron": "0 8 * * *",
+      "weekly_cron": "0 9 * * mon",
+      "report_dir": "/app/data/reports",
+      "low_stock_units": 100,
+      "near_expiry_days": 90,
+      "max_attempts": 3,
+      "timeout_seconds": 120.0,
+      "retry_delay_seconds": 2.0,
+      "stop_on_critical": true,
+      "assessment_at": null,
+      "attach_report": true
+    },
+    "healthy": true,
+    "jobs": [
+      {
+        "id": "daily",
+        "next_run_time": "2026-10-12T08:00:00+05:30",
+        "trigger": "cron[month='*', day='*', day_of_week='*', hour='8', minute='0']"
+      },
+      {
+        "id": "weekly",
+        "next_run_time": "2026-10-12T09:00:00+05:30",
+        "trigger": "cron[month='*', day='*', day_of_week='mon', hour='9', minute='0']"
+      }
+    ]
+  },
+  "business_counts": {
+    "categories": 8,
+    "distributors": 24,
+    "warehouses": 4,
+    "medicines": 120,
+    "sales": 8820,
+    "batches": 1920,
+    "inventory": 1920,
+    "sales_items": 31549
+  },
+  "automation_counts": {
+    "auto_executions": 3,
+    "auto_attempts": 3,
+    "auto_events": 26,
+    "auto_reports": 2,
+    "auto_alerts": 85,
+    "auto_alert_events": 86,
+    "auto_emails": 3,
+    "auto_mail_events": 3,
+    "auto_scheduler_state": 1
+  },
+  "execution_status_counts": {
+    "failed": 1,
+    "succeeded": 2
+  },
+  "alert_counts": {
+    "critical_quality": 7,
+    "near_expiry": 77,
+    "workflow_failure": 1
+  },
+  "alert_status_counts": {
+    "new": 84,
+    "resolved": 1
+  },
+  "mail_status_counts": {
+    "preview": 3
+  },
+  "stage_order": [
+    "validation",
+    "analytics",
+    "report",
+    "alerts",
+    "email"
+  ],
+  "workbook_checks": {
+    "opened_with": "openpyxl 3.1.5",
+    "zip_integrity": "passed",
+    "worksheets": [
+      "Executive Summary",
+      "Sales Analytics",
+      "Regional Sales",
+      "Inventory Levels",
+      "Near Expiry",
+      "Data Quality",
+      "Notes"
+    ],
+    "revenue_independent_sql": "54539450.97",
+    "closing_units_independent_sql": 482753,
+    "closing_value_independent_sql": "70823412.56",
+    "excel_tables": 7,
+    "conditional_formatting": 2,
+    "all_headers_frozen": true,
+    "GUI_office_tested": false
+  },
+  "scheduler_after_restart": {
+    "id": "main",
+    "owner": "e1d7a965-5282-4924-8417-3a589764e4c1",
+    "status": "running",
+    "heartbeat_at": "2026-10-11 18:55:45.359720+00:00",
+    "config_json": {
+      "timezone": "Asia/Kolkata",
+      "daily_cron": "0 8 * * *",
+      "weekly_cron": "0 9 * * mon",
+      "report_dir": "/app/data/reports",
+      "low_stock_units": 100,
+      "near_expiry_days": 90,
+      "max_attempts": 3,
+      "timeout_seconds": 120.0,
+      "retry_delay_seconds": 2.0,
+      "stop_on_critical": true,
+      "assessment_at": null,
+      "attach_report": true
+    },
+    "healthy": true,
+    "jobs": [
+      {
+        "id": "daily",
+        "next_run_time": "2026-10-12T08:00:00+05:30",
+        "trigger": "cron[month='*', day='*', day_of_week='*', hour='8', minute='0']"
+      },
+      {
+        "id": "weekly",
+        "next_run_time": "2026-10-12T09:00:00+05:30",
+        "trigger": "cron[month='*', day='*', day_of_week='mon', hour='9', minute='0']"
+      }
+    ]
+  },
+  "restart_preserved_business_counts": {
+    "categories": 8,
+    "distributors": 24,
+    "warehouses": 4,
+    "medicines": 120,
+    "sales": 8820,
+    "batches": 1920,
+    "inventory": 1920,
+    "sales_items": 31549
+  },
+  "restart_preserved_automation_counts": {
+    "auto_executions": 3,
+    "auto_attempts": 3,
+    "auto_events": 26,
+    "auto_reports": 2,
+    "auto_alerts": 85,
+    "auto_alert_events": 86,
+    "auto_emails": 3,
+    "auto_mail_events": 3,
+    "auto_scheduler_state": 1
+  },
+  "download_after_restart_verified": true,
+  "tests": {
+    "passed": 92,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 16.04,
+    "postgresql_integration": true,
+    "command": "TEST_DATABASE_URL=postgresql+psycopg://pharma:synthetic_local_only@localhost:55432/pharma_test .venv/bin/pytest -q",
+    "network_access": "Local PostgreSQL and loopback API tests require network-enabled execution; restricted sandbox attempt could not open sockets."
+  },
+  "lint": {
+    "ruff_check": "passed",
+    "ruff_format": "passed"
+  },
+  "services": {
+    "postgres": "healthy",
+    "app": "healthy",
+    "scheduler": "healthy",
+    "api": "healthy"
+  },
+  "dashboard_browser_checks": {
+    "phase_1_sales_kpis_and_charts": "passed",
+    "phase_2_clean_validation_dashboard": "passed",
+    "phase_3_jobs_history_report_library_and_email_preview": "passed",
+    "desktop_viewport": "1440x1000",
+    "screenshot": "docs/screenshots/automation-desk.jpg"
+  },
+  "unverified": [
+    "Live SMTP delivery (intentionally disabled)",
+    "Microsoft Excel GUI (workbook reopened and checked using openpyxl)"
+  ]
+}

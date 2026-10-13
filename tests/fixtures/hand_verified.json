@@ -1,0 +1,10 @@
+{
+  "categories": [{"id": 1, "name": "Cardiology"}],
+  "medicines": [{"id": 1, "category_id": 1, "name": "SYN-A 10mg", "sku": "SYN-001", "dosage_form": "Tablet", "list_price": "15.00"}],
+  "distributors": [{"id": 1, "name": "Synthetic North distributor", "region": "North", "city": "Delhi"}],
+  "warehouses": [{"id": 1, "name": "North hub", "region": "North", "city": "Delhi"}],
+  "batches": [{"id": 1, "medicine_id": 1, "warehouse_id": 1, "batch_number": "SYN-B001", "manufacture_date": "2024-12-01", "received_date": "2025-01-01", "expiry_date": "2025-02-01", "unit_cost": "2.00", "received_quantity": 100}],
+  "inventory": [{"batch_id": 1, "quantity": 90, "snapshot_date": "2025-12-31"}],
+  "sales": [{"id": 1, "distributor_id": 1, "warehouse_id": 1, "sale_date": "2025-01-06", "invoice_number": "SYN-INV001"}],
+  "sales_items": [{"id": 1, "sale_id": 1, "warehouse_id": 1, "batch_id": 1, "quantity": 10, "unit_price": "15.00"}]
+}

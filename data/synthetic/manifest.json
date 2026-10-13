@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "seed": 20251011,
+  "snapshot": "2025-12-31",
+  "rows": {
+    "categories": 8,
+    "medicines": 120,
+    "distributors": 24,
+    "warehouses": 4,
+    "batches": 1920,
+    "inventory": 1920,
+    "sales": 8820,
+    "sales_items": 31549
+  }
+}

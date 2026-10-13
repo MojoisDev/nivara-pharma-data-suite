@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "real_mail_sent": false,
+  "smtp_factory": "Mock only",
+  "case": "Server accepts DATA then returns 421 on QUIT",
+  "send_message_calls": 2,
+  "final_status": "sent",
+  "issue_confirmed": true
+}

@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "weights": {
+    "completeness": 1.0,
+    "uniqueness": 1.0,
+    "validity": 1.0,
+    "consistency": 1.0,
+    "referential_integrity": 1.0,
+    "timeliness": 1.0
+  },
+  "max_price": 100000.0,
+  "max_quantity": 1000000,
+  "max_import_age_hours": 24.0,
+  "max_feed_lag_days": 2,
+  "max_price_to_list_ratio": 1.2
+}

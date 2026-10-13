@@ -1,0 +1,97 @@
+x-suite-environment: &suite-environment
+  DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-pharma}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-pharma}
+  AUTOMATION_CONFIG: /app/config/automation.json
+  REPORT_DIR: /app/data/reports
+  DAILY_CRON: ${DAILY_CRON:-}
+  WEEKLY_CRON: ${WEEKLY_CRON:-}
+  SCHEDULER_TIMEZONE: ${SCHEDULER_TIMEZONE:-}
+  DQ_ASSESSMENT_AT: ${DQ_ASSESSMENT_AT:-}
+  MAIL_MODE: ${MAIL_MODE:-preview}
+  SMTP_HOST: ${SMTP_HOST:-localhost}
+  SMTP_PORT: ${SMTP_PORT:-587}
+  SMTP_TLS: ${SMTP_TLS:-starttls}
+  SMTP_FROM: ${SMTP_FROM:-nivara@synthetic.invalid}
+  SMTP_RECIPIENTS: ${SMTP_RECIPIENTS:-reviewer@synthetic.invalid}
+  SMTP_ALLOWED_RECIPIENTS: ${SMTP_ALLOWED_RECIPIENTS:-}
+  SMTP_ALLOW_EXTERNAL: ${SMTP_ALLOW_EXTERNAL:-false}
+  SMTP_MAX_ATTEMPTS: ${SMTP_MAX_ATTEMPTS:-3}
+  SMTP_USERNAME: ${SMTP_USERNAME:-}
+  SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pharma}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-pharma}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
+    volumes:
+      - pharma_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  app:
+    build: .
+    image: pharma-data-suite:local
+    environment: *suite-environment
+    ports:
+      - "127.0.0.1:${APP_PORT:-8501}:8501"
+    volumes:
+      - ./data/reports:/app/data/reports
+      - ./config/automation.json:/app/config/automation.json:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+    restart: unless-stopped
+  scheduler:
+    image: pharma-data-suite:local
+    command: ["pharma", "auto", "schedule"]
+    environment: *suite-environment
+    volumes:
+      - ./data/reports:/app/data/reports
+      - ./config/automation.json:/app/config/automation.json:ro
+    depends_on:
+      app:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "pharma", "auto", "health"]
+      interval: 15s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+    stop_grace_period: 20s
+    restart: unless-stopped
+  api:
+    image: pharma-data-suite:local
+    command: ["pharma", "auto", "serve", "--host", "0.0.0.0", "--port", "8503"]
+    environment:
+      <<: *suite-environment
+      AUTOMATION_API_TOKEN: ${AUTOMATION_API_TOKEN:-}
+    ports:
+      - "127.0.0.1:${AUTOMATION_API_PORT:-8503}:8503"
+    volumes:
+      - ./data/reports:/app/data/reports
+      - ./config/automation.json:/app/config/automation.json:ro
+    depends_on:
+      app:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8503/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    restart: unless-stopped
+volumes:
+  pharma_db:
